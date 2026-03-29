@@ -1,15 +1,18 @@
+/* Variáveis CSS para cores do tema Netflix */
 :root {
     --netflix-red: #E50914;
     --dark-bg: #141414;
     --text-color: #ffffff;
 }
 
+/* Reset básico de margens e padding, e box-sizing para bordas */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Estilos base do body: fonte, fundo escuro, cor do texto, sem overflow horizontal */
 body {
     font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     background-color: var(--dark-bg);
@@ -17,6 +20,7 @@ body {
     overflow-x: hidden;
 }
 
+/* Estilos para links: sem decoração, cor clara, transição de cor no hover */
 a {
     text-decoration: none;
     color: #e5e5e5;
@@ -27,7 +31,7 @@ a:hover {
     color: #b3b3b3;
 }
 
-/* Navbar */
+/* Navbar fixa no topo da página */
 .navbar {
     position: fixed;
     top: 0;
@@ -41,6 +45,7 @@ a:hover {
     background-color: var(--dark-bg);
 }
 
+/* Contêineres esquerdo e direito da navbar */
 .navbar-left,
 .navbar-right {
     display: flex;
@@ -48,12 +53,14 @@ a:hover {
     gap: 20px;
 }
 
+/* Logo da Netflix */
 .logo {
     width: 92px;
     margin-right: 25px;
     cursor: pointer;
 }
 
+/* Links de navegação */
 .nav-links {
     list-style: none;
     display: flex;
@@ -61,25 +68,30 @@ a:hover {
     font-size: 13px;
 }
 
+/* Link ativo na navegação */
 .nav-links .active {
     font-weight: bold;
     color: white;
 }
 
+/* Ícones na navbar */
 .icon {
     font-size: 20px;
     cursor: pointer;
 }
 
+/* Link para modo kids */
 .kids-link {
     font-size: 14px;
 }
 
+/* Notificação com badge */
 .nav-notification {
     position: relative;
     cursor: pointer;
 }
 
+/* Badge de notificação */
 .notification-badge {
     position: absolute;
     top: -5px;
@@ -96,6 +108,7 @@ a:hover {
     align-items: center;
 }
 
+/* Menu de perfil */
 .profile-menu {
     display: flex;
     align-items: center;
@@ -108,20 +121,22 @@ a:hover {
     border-radius: 4px;
 }
 
-/* Sliders */
+/* Contêiner dos sliders/carrosséis */
 .sliders-container {
     padding: 0 4%;
     padding-top: 100px;
-    /* Space for navbar */
+    /* Espaço para a navbar */
     position: relative;
     z-index: 3;
     padding-bottom: 100px;
 }
 
+/* Seção de cada slider */
 .slider-section {
     margin-bottom: 3.5vw;
 }
 
+/* Cabeçalho do slider com título e indicadores */
 .slider-header {
     display: flex;
     justify-content: space-between;
@@ -129,6 +144,7 @@ a:hover {
     margin-bottom: 12px;
 }
 
+/* Título do slider */
 .slider-title {
     font-size: 1.25vw;
     font-weight: bold;
@@ -136,6 +152,7 @@ a:hover {
     line-height: 1.25vw;
 }
 
+/* Indicadores de página do slider */
 .slider-indicators {
     display: flex;
     gap: 2px;
@@ -148,20 +165,22 @@ a:hover {
     background-color: #4d4d4d;
 }
 
+/* Indicador ativo */
 .slider-indicators div.active {
     background-color: #aaa;
 }
 
+/* Linha de filmes/cards */
 .movie-row {
     display: flex;
     gap: 8px;
-    /* Small gap between movie cards */
+    /* Pequeno espaço entre cards */
     overflow-x: visible;
-    /* Let the expanded cards paint outside this box vertically */
+    /* Permite que cards expandidos apareçam fora da caixa verticalmente */
     padding: 10px 4% 50px 4%;
-    /* Added bottom padding to hold the expanding modal */
+    /* Padding inferior para modal expandido */
     margin: 0 -4%;
-    /* Pull edges back out so we don't double up padding from container */
+    /* Puxa bordas para não duplicar padding */
     scroll-behavior: smooth;
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -171,6 +190,7 @@ a:hover {
     display: none;
 }
 
+/* Card de filme */
 .movie-card {
     min-width: 250px;
     width: 250px;
@@ -182,10 +202,10 @@ a:hover {
     position: relative;
     z-index: 1;
     transform-origin: center center;
-    /* Default origin */
+    /* Origem padrão */
 }
 
-/* Modifiers applied by JavaScript to prevent edge clipping */
+/* Modificadores aplicados por JavaScript para evitar corte nas bordas */
 .movie-card.origin-left {
     transform-origin: left center;
 }
@@ -194,15 +214,17 @@ a:hover {
     transform-origin: right center;
 }
 
+/* Efeito de hover no card: escala e elevação */
 .movie-card:hover {
     transform: scale(1.6) translateY(-5%);
-    /* Reduced vertical translation since container has more padding */
+    /* Translação vertical reduzida pois container tem mais padding */
     z-index: 99;
     border-radius: 6px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9);
     transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.6s, border-radius 0.3s 0.6s, box-shadow 0.3s 0.6s, z-index 0s 0s;
 }
 
+/* Imagem do poster no card */
 .movie-card img {
     position: absolute;
     top: 0;
@@ -215,6 +237,7 @@ a:hover {
     z-index: 2;
 }
 
+/* Iframe para vídeo do YouTube */
 .movie-card iframe {
     position: absolute;
     top: 0;
@@ -228,22 +251,25 @@ a:hover {
     z-index: 1;
 }
 
+/* Iframe quando está tocando */
 .movie-card iframe.playing {
     opacity: 1;
     z-index: 3;
     border-radius: 6px 6px 0 0;
 }
 
+/* Imagem no hover */
 .movie-card:hover img {
     border-radius: 6px 6px 0 0;
     transition: border-radius 0s 0.6s;
 }
 
+/* Imagem quando vídeo está tocando */
 .movie-card img.playing-video {
     opacity: 0;
 }
 
-/* Card Details Modal */
+/* Modal de detalhes do card */
 .card-details {
     position: absolute;
     top: 100%;
@@ -264,12 +290,14 @@ a:hover {
     cursor: default;
 }
 
+/* Modal visível no hover */
 .movie-card:hover .card-details {
     opacity: 1;
     visibility: visible;
     transition: opacity 0.2s 0.6s, visibility 0s 0.6s;
 }
 
+/* Botões nos detalhes */
 .details-buttons {
     display: flex;
     justify-content: space-between;
@@ -282,6 +310,7 @@ a:hover {
     gap: 8px;
 }
 
+/* Botões com ícones */
 .btn-icon {
     width: 32px;
     height: 32px;
@@ -302,6 +331,7 @@ a:hover {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
+/* Botão de play especial */
 .btn-play-icon {
     background-color: white;
     color: black;
@@ -316,6 +346,7 @@ a:hover {
     margin-left: 2px;
 }
 
+/* Informações dos detalhes */
 .details-info {
     display: flex;
     align-items: center;
@@ -324,10 +355,12 @@ a:hover {
     font-weight: bold;
 }
 
+/* Pontuação de compatibilidade */
 .match-score {
     color: #46d369;
 }
 
+/* Badge de idade */
 .age-badge {
     background-color: transparent;
     border: 1px solid rgba(255, 255, 255, 0.4);
@@ -337,12 +370,14 @@ a:hover {
     font-family: Arial, sans-serif;
 }
 
+/* Badge vermelho */
 .age-badge.red-accent {
     background-color: #d32f2f;
     border: none;
     font-weight: bold;
 }
 
+/* Resolução */
 .resolution {
     border: 1px solid rgba(255, 255, 255, 0.4);
     padding: 1px 3px;
@@ -350,10 +385,12 @@ a:hover {
     color: rgba(255, 255, 255, 0.9);
 }
 
+/* Duração */
 .duration {
     color: rgba(255, 255, 255, 0.9);
 }
 
+/* Tags dos detalhes */
 .details-tags {
     display: flex;
     gap: 6px;
@@ -427,7 +464,7 @@ a:hover {
     color: black;
 }
 
-/* Progress bar */
+/* Barra de progresso */
 .progress-bar-container {
     position: absolute;
     bottom: 0;
@@ -446,7 +483,7 @@ a:hover {
     border-bottom-left-radius: 4px;
 }
 
-/* Mobile adjustments */
+/* Ajustes para mobile */
 @media (max-width: 768px) {
     .nav-links {
         display: none;
