@@ -94,6 +94,30 @@ body.light-mode {
     border: 1px solid #222; /* Borda escura ao passar o mouse */
 }
 
+section[aria-label="Perfis disponíveis"] {
+    display: flex;
+    flex-direction: column; /* Organiza perfis em cima e botão embaixo */
+    align-items: center;
+    gap: 4rem; /* Cria um espaçamento elegante entre os perfis e o botão */
+}
+
+.manage-profiles {
+    background: transparent;
+    color: gray; /* Cor padrão do botão na Netflix */
+    border: 1px solid gray;
+    padding: 0.5rem 1.5rem;
+    font-size: 1.1rem; /* Mesma medida do nome dos perfis */
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 4px; /* Borda levemente arredondada como solicitado */
+}
+
+.manage-profiles:hover {
+    color: #fff;
+    border-color: #fff;
+}
 
 /* Media Query para telas menores (celulares e tablets pequenos) */
 @media (max-width: 768px) {
