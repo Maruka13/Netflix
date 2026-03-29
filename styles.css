@@ -23,7 +23,7 @@ h1 {
 
 section[aria-label="Perfis disponíveis"] {
     width: 100%; /* Ocupa toda a largura disponível */
-    max-width: 600px; /* Limita a largura máxima */
+    max-width: 800px; /* Limita a largura máxima */
     display: flex; /* Usa flexbox */
     justify-content: center; /* Centraliza os perfis */
 }
@@ -51,8 +51,8 @@ figure {
 }
 
 img {
-    width: 120px; /* Largura fixa da imagem */
-    height: 120px; /* Altura fixa da imagem */
+    width: 160px; /* Largura fixa da imagem */
+    height: 160px; /* Altura fixa da imagem */
     border-radius: 8px; /* Bordas arredondadas */
     object-fit: cover; /* Mantém proporção da imagem */
     margin-bottom: 0.5rem; /* Espaço abaixo da imagem */
