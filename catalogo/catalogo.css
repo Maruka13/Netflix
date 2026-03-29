@@ -538,3 +538,41 @@ footer {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
+@media (max-width: 768px) {
+    /* Transforma o body em um container fixo na altura da tela */
+    body {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden; 
+    }
+
+    /* Navbar fixa no topo */
+    .navbar {
+        position: relative; /* No flexbox, o relative dentro do body fixo já basta */
+        flex-shrink: 0;
+    }
+
+    /* Container de filmes vira a única área de scroll */
+    .sliders-container {
+        flex-grow: 1;
+        overflow-y: auto;
+        padding-top: 20px;
+        padding-bottom: 40px; /* Espaço para não grudar no footer */
+    }
+
+    /* Footer fixo na base apenas no mobile */
+    footer {
+        flex-shrink: 0;
+        background-color: var(--dark-bg);
+        padding: 15px 4%;
+        border-top: 1px solid #333;
+    }
+
+    /* Ajuste dos links do footer para não ocupar muito espaço no celular */
+    .footer-links {
+        grid-template-columns: repeat(2, 1fr);
+        font-size: 11px;
+    }
+}
