@@ -10,7 +10,8 @@ main {
     display: flex; /* Usa flexbox para layout */
     flex-direction: column; /* Organiza os elementos em coluna */
     align-items: center; /* Centraliza os itens horizontalmente */
-    justify-content: center; /* Centraliza os itens verticalmente */
+    justify-content: padding; /* Adiciona espaçamento entre os itens */
+    padding-top: 25vh; /* Espaço superior para centralizar verticalmente */
     min-height: 100vh; /* Garante altura mínima de 100% da tela */
 }
 
