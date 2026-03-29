@@ -72,3 +72,24 @@ figcaption {
     margin-top: 0.5rem; /* Espaço acima da legenda */
     letter-spacing: 0.5px; /* Espaçamento entre letras */
 }
+
+/* Media Query para telas menores (celulares e tablets pequenos) */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8rem; /* Diminui um pouco o título no celular */
+        text-align: center;
+    }
+
+    nav.profiles {
+        display: flex;
+        flex-wrap: wrap; /* Permite que os itens quebrem para a linha de baixo */
+        justify-content: center; /* Centraliza os pares */
+        gap: 1.5rem; /* Espaço levemente menor entre os perfis no celular */
+        max-width: 400px; /* Limita a largura para forçar o encaixe de 2 em 2 */
+    }
+
+    img {
+        width: 130px; /* Reduz um pouco o tamanho da imagem para caber 2 lado a lado com folga */
+        height: 130px;
+    }
+}
