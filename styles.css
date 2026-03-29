@@ -7,12 +7,13 @@ body {
 }
 
 main {
-    display: flex; /* Usa flexbox para layout */
-    flex-direction: column; /* Organiza os elementos em coluna */
-    align-items: center; /* Centraliza os itens horizontalmente */
-    justify-content: padding; /* Adiciona espaçamento entre os itens */
-    padding-top: 25vh; /* Espaço superior para centralizar verticalmente */
-    min-height: 100vh; /* Garante altura mínima de 100% da tela */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Centraliza verticalmente sem empurrar */
+    height: 100vh; /* Usa a altura exata da tela */
+    overflow: hidden; /* Garante que nenhuma barra de scroll apareça */
+    margin: 0;
 }
 
 h1 {
