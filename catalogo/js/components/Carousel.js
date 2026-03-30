@@ -32,7 +32,6 @@ export function createCarousel(category) {
     row.className = 'movie-row';
 
     // Para cada item na categoria, cria um card e adiciona à linha
-    // Para cada item na categoria, cria um card e adiciona à linha
     category.items.forEach(item => {
         const card = createCard(item);
         row.appendChild(card);

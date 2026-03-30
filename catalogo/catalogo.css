@@ -497,25 +497,25 @@ footer {
 }
 
 @media (max-width: 768px) {
-    /* Transforma o body em um container fixo na altura da tela */
     body {
         height: 100vh;
         display: flex;
         flex-direction: column;
-        overflow: hidden; 
+        overflow: hidden; /* Trava o scroll do lado de fora */
     }
 
-    /* Navbar fixa no topo */
     .navbar {
-        position: relative; /* No flexbox, o relative dentro do body fixo já basta */
         flex-shrink: 0;
     }
 
     .sliders-container {
-        padding-bottom: 20px !important; /* Ajusta o respiro inferior já que não tem mais footer */
+        flex: 1; /* Faz o container ocupar todo o espaço restante da tela */
+        overflow-y: auto; /* O scroll agora acontece APENAS dentro da lista de filmes */
+        padding-bottom: 50px !important; /* Espaço extra para não cortar o último card */
+        -webkit-overflow-scrolling: touch; /* Melhora a suavidade do scroll no iPhone */
     }
 
     footer {
-        display: none !important; /* Esconde completamente o footer em telas menores que 768px */
+        display: none !important;
     }
 }
