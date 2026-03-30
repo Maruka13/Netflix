@@ -1,18 +1,15 @@
-/* Variáveis CSS para cores do tema Netflix */
 :root {
     --netflix-red: #E50914;
     --dark-bg: #141414;
     --text-color: #ffffff;
 }
 
-/* Reset básico de margens e padding, e box-sizing para bordas */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Estilos base do body: fonte, fundo escuro, cor do texto, sem overflow horizontal */
 body {
     font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     background-color: var(--dark-bg);
@@ -20,7 +17,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Estilos para links: sem decoração, cor clara, transição de cor no hover */
 a {
     text-decoration: none;
     color: #e5e5e5;
@@ -31,7 +27,7 @@ a:hover {
     color: #b3b3b3;
 }
 
-/* Navbar fixa no topo da página */
+/* Navbar */
 .navbar {
     position: fixed;
     top: 0;
@@ -45,7 +41,6 @@ a:hover {
     background-color: var(--dark-bg);
 }
 
-/* Contêineres esquerdo e direito da navbar */
 .navbar-left,
 .navbar-right {
     display: flex;
@@ -53,14 +48,12 @@ a:hover {
     gap: 20px;
 }
 
-/* Logo da Netflix */
 .logo {
     width: 92px;
     margin-right: 25px;
     cursor: pointer;
 }
 
-/* Links de navegação */
 .nav-links {
     list-style: none;
     display: flex;
@@ -68,30 +61,25 @@ a:hover {
     font-size: 13px;
 }
 
-/* Link ativo na navegação */
 .nav-links .active {
     font-weight: bold;
     color: white;
 }
 
-/* Ícones na navbar */
 .icon {
     font-size: 20px;
     cursor: pointer;
 }
 
-/* Link para modo kids */
 .kids-link {
     font-size: 14px;
 }
 
-/* Notificação com badge */
 .nav-notification {
     position: relative;
     cursor: pointer;
 }
 
-/* Badge de notificação */
 .notification-badge {
     position: absolute;
     top: -5px;
@@ -108,7 +96,6 @@ a:hover {
     align-items: center;
 }
 
-/* Menu de perfil */
 .profile-menu {
     display: flex;
     align-items: center;
@@ -121,22 +108,20 @@ a:hover {
     border-radius: 4px;
 }
 
-/* Contêiner dos sliders/carrosséis */
+/* Sliders */
 .sliders-container {
     padding: 0 4%;
     padding-top: 100px;
-    /* Espaço para a navbar */
+    /* Space for navbar */
     position: relative;
     z-index: 3;
     padding-bottom: 100px;
 }
 
-/* Seção de cada slider */
 .slider-section {
     margin-bottom: 3.5vw;
 }
 
-/* Cabeçalho do slider com título e indicadores */
 .slider-header {
     display: flex;
     justify-content: space-between;
@@ -144,7 +129,6 @@ a:hover {
     margin-bottom: 12px;
 }
 
-/* Título do slider */
 .slider-title {
     font-size: 1.25vw;
     font-weight: bold;
@@ -152,7 +136,6 @@ a:hover {
     line-height: 1.25vw;
 }
 
-/* Indicadores de página do slider */
 .slider-indicators {
     display: flex;
     gap: 2px;
@@ -165,22 +148,20 @@ a:hover {
     background-color: #4d4d4d;
 }
 
-/* Indicador ativo */
 .slider-indicators div.active {
     background-color: #aaa;
 }
 
-/* Linha de filmes/cards */
 .movie-row {
     display: flex;
     gap: 8px;
-    /* Pequeno espaço entre cards */
+    /* Small gap between movie cards */
     overflow-x: visible;
-    /* Permite que cards expandidos apareçam fora da caixa verticalmente */
+    /* Let the expanded cards paint outside this box vertically */
     padding: 10px 4% 50px 4%;
-    /* Padding inferior para modal expandido */
+    /* Added bottom padding to hold the expanding modal */
     margin: 0 -4%;
-    /* Puxa bordas para não duplicar padding */
+    /* Pull edges back out so we don't double up padding from container */
     scroll-behavior: smooth;
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -190,7 +171,6 @@ a:hover {
     display: none;
 }
 
-/* Card de filme */
 .movie-card {
     min-width: 250px;
     width: 250px;
@@ -202,10 +182,10 @@ a:hover {
     position: relative;
     z-index: 1;
     transform-origin: center center;
-    /* Origem padrão */
+    /* Default origin */
 }
 
-/* Modificadores aplicados por JavaScript para evitar corte nas bordas */
+/* Modifiers applied by JavaScript to prevent edge clipping */
 .movie-card.origin-left {
     transform-origin: left center;
 }
@@ -214,17 +194,15 @@ a:hover {
     transform-origin: right center;
 }
 
-/* Efeito de hover no card: escala e elevação */
 .movie-card:hover {
     transform: scale(1.6) translateY(-5%);
-    /* Translação vertical reduzida pois container tem mais padding */
+    /* Reduced vertical translation since container has more padding */
     z-index: 99;
     border-radius: 6px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9);
     transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.6s, border-radius 0.3s 0.6s, box-shadow 0.3s 0.6s, z-index 0s 0s;
 }
 
-/* Imagem do poster no card */
 .movie-card img {
     position: absolute;
     top: 0;
@@ -237,7 +215,6 @@ a:hover {
     z-index: 2;
 }
 
-/* Iframe para vídeo do YouTube */
 .movie-card iframe {
     position: absolute;
     top: 0;
@@ -251,25 +228,22 @@ a:hover {
     z-index: 1;
 }
 
-/* Iframe quando está tocando */
 .movie-card iframe.playing {
     opacity: 1;
     z-index: 3;
     border-radius: 6px 6px 0 0;
 }
 
-/* Imagem no hover */
 .movie-card:hover img {
     border-radius: 6px 6px 0 0;
     transition: border-radius 0s 0.6s;
 }
 
-/* Imagem quando vídeo está tocando */
 .movie-card img.playing-video {
     opacity: 0;
 }
 
-/* Modal de detalhes do card */
+/* Card Details Modal */
 .card-details {
     position: absolute;
     top: 100%;
@@ -290,14 +264,12 @@ a:hover {
     cursor: default;
 }
 
-/* Modal visível no hover */
 .movie-card:hover .card-details {
     opacity: 1;
     visibility: visible;
     transition: opacity 0.2s 0.6s, visibility 0s 0.6s;
 }
 
-/* Botões nos detalhes */
 .details-buttons {
     display: flex;
     justify-content: space-between;
@@ -310,7 +282,6 @@ a:hover {
     gap: 8px;
 }
 
-/* Botões com ícones */
 .btn-icon {
     width: 32px;
     height: 32px;
@@ -331,7 +302,6 @@ a:hover {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Botão de play especial */
 .btn-play-icon {
     background-color: white;
     color: black;
@@ -346,7 +316,6 @@ a:hover {
     margin-left: 2px;
 }
 
-/* Informações dos detalhes */
 .details-info {
     display: flex;
     align-items: center;
@@ -355,12 +324,10 @@ a:hover {
     font-weight: bold;
 }
 
-/* Pontuação de compatibilidade */
 .match-score {
     color: #46d369;
 }
 
-/* Badge de idade */
 .age-badge {
     background-color: transparent;
     border: 1px solid rgba(255, 255, 255, 0.4);
@@ -370,14 +337,12 @@ a:hover {
     font-family: Arial, sans-serif;
 }
 
-/* Badge vermelho */
 .age-badge.red-accent {
     background-color: #d32f2f;
     border: none;
     font-weight: bold;
 }
 
-/* Resolução */
 .resolution {
     border: 1px solid rgba(255, 255, 255, 0.4);
     padding: 1px 3px;
@@ -385,12 +350,10 @@ a:hover {
     color: rgba(255, 255, 255, 0.9);
 }
 
-/* Duração */
 .duration {
     color: rgba(255, 255, 255, 0.9);
 }
 
-/* Tags dos detalhes */
 .details-tags {
     display: flex;
     gap: 6px;
@@ -464,7 +427,7 @@ a:hover {
     color: black;
 }
 
-/* Barra de progresso */
+/* Progress bar */
 .progress-bar-container {
     position: absolute;
     bottom: 0;
@@ -483,7 +446,7 @@ a:hover {
     border-bottom-left-radius: 4px;
 }
 
-/* Ajustes para mobile */
+/* Mobile adjustments */
 @media (max-width: 768px) {
     .nav-links {
         display: none;
@@ -534,12 +497,6 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .footer-links {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
     /* Transforma o body em um container fixo na altura da tela */
     body {
         height: 100vh;
@@ -554,25 +511,11 @@ footer {
         flex-shrink: 0;
     }
 
-    /* Container de filmes vira a única área de scroll */
     .sliders-container {
-        flex-grow: 1;
-        overflow-y: auto;
-        padding-top: 20px;
-        padding-bottom: 40px; /* Espaço para não grudar no footer */
+        padding-bottom: 20px !important; /* Ajusta o respiro inferior já que não tem mais footer */
     }
 
-    /* Footer fixo na base apenas no mobile */
     footer {
-        flex-shrink: 0;
-        background-color: var(--dark-bg);
-        padding: 15px 4%;
-        border-top: 1px solid #333;
-    }
-
-    /* Ajuste dos links do footer para não ocupar muito espaço no celular */
-    .footer-links {
-        grid-template-columns: repeat(2, 1fr);
-        font-size: 11px;
+        display: none !important; /* Esconde completamente o footer em telas menores que 768px */
     }
 }
